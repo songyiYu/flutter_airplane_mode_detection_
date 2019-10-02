@@ -52,13 +52,21 @@ class _MyAppState extends State<MyApp> {
                         child: Text('AirplaneCheck'),
                         onPressed: () async {
                           bool airplaneMode = await AirplaneModeDetection.detectAirplaneMode();
+                          print("airplaneMode: "+airplaneMode.toString());
                         },
                         color: Colors.green,
                       ),
                       RaisedButton(
-                        child: Text('ChangeAirplaneMode'),
+                        child: Text('AirplaneMode ON'),
                         onPressed: () async {
-                          bool airplaneMode = await AirplaneModeDetection.changeAirplaneMode();
+                          await AirplaneModeDetection.changeAirplaneMode("on");
+                        },
+                        color: Colors.blue,
+                      ),
+                      RaisedButton(
+                        child: Text('AirplaneMode OFF'),
+                        onPressed: () async {
+                          await AirplaneModeDetection.changeAirplaneMode("off");
                         },
                         color: Colors.blue,
                       )
