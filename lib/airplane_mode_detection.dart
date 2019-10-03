@@ -16,7 +16,7 @@ class AirplaneModeDetection {
     return airplaneMode;
   }
 
-  static void changeAirplaneMode(String state) async {
-    await _channel.invokeMethod('changeAirplaneMode', {"state": state});
+  static void changeAirplaneMode() async {
+    await _channel.invokeMethod('changeAirplaneMode');
   }
 }

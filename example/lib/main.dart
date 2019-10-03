@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                       RaisedButton(
                         child: Text('ChangeAirplaneMode'),
                         onPressed: () async {
-                        //  bool airplaneMode = await AirplaneModeDetection.changeAirplaneMode();
+                          void airplaneMode = await AirplaneModeDetection.changeAirplaneMode();
                         },
                         color: Colors.blue,
                       )
