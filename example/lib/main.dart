@@ -26,6 +26,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       platformVersion = await AirplaneModeDetection.platformVersion;
+      print(platformVersion);
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -52,13 +53,15 @@ class _MyAppState extends State<MyApp> {
                         child: Text('AirplaneCheck'),
                         onPressed: () async {
                           bool airplaneMode = await AirplaneModeDetection.detectAirplaneMode();
+
+                          print(airplaneMode);
                         },
                         color: Colors.green,
                       ),
                       RaisedButton(
                         child: Text('ChangeAirplaneMode'),
                         onPressed: () async {
-                          bool airplaneMode = await AirplaneModeDetection.changeAirplaneMode();
+                        //  bool airplaneMode = await AirplaneModeDetection.changeAirplaneMode();
                         },
                         color: Colors.blue,
                       )
